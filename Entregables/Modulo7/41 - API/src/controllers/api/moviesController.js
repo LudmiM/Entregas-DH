@@ -17,7 +17,15 @@ const moviesController = {
             include: ['genre']
         })
             .then(movies => {
-                res.render('moviesList.ejs', {movies})
+                //res.render('moviesList.ejs', {movies})
+                return res.status(200).json({
+                    ok: true,
+                    meta: {
+                        status: 200,
+                        total: movies.length,
+                        url: `${req.protocol}://${req.get}('host')/api/movies`
+                    }
+                })
             })
     },
     'detail': (req, res) => {
