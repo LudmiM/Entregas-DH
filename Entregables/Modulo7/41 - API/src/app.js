@@ -8,11 +8,10 @@ const app = express();
 const indexRouter = require('./routes/index');
 const moviesRoutes = require('./routes/moviesRoutes');
 const genresRoutes = require('./routes/genresRoutes');
-const moviesApiRoutes = require('./routes/api/moviesRoutes');
-const genresApiRoutes = require('./routes/api/genresRoutes');
 
 //Aquí pueden colocar las rutas de las APIs
-
+const moviesApiRoutes = require('./routes/api/moviesRoutes');
+const genresApiRoutes = require('./routes/api/genresRoutes');
 
 // view engine setup
 app.set('views', path.resolve(__dirname, './views'));
